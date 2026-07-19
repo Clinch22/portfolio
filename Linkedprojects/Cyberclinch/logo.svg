@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="100" viewBox="0 0 320 100">
+  <!-- Shield with gradient -->
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#004aad"/>
+      <stop offset="100%" stop-color="#00b14f"/>
+    </linearGradient>
+  </defs>
+  <path d="M50,0 L150,0 L180,50 L150,100 L50,100 L20,50 Z" fill="url(#grad)"/>
+  
+  <!-- Circuit inside shield -->
+  <circle cx="60" cy="50" r="5" fill="white"/>
+  <circle cx="80" cy="40" r="5" fill="white"/>
+  <circle cx="80" cy="60" r="5" fill="white"/>
+  <line x1="60" y1="50" x2="80" y2="40" stroke="white" stroke-width="3"/>
+  <line x1="60" y1="50" x2="80" y2="60" stroke="white" stroke-width="3"/>
+  
+  <!-- Company text -->
+  <text x="120" y="50" font-family="Arial, sans-serif" font-size="30" fill="url(#grad)" font-weight="bold">
+    ClinchCyber
+  </text>
+  <text x="120" y="75" font-family="Arial, sans-serif" font-size="14" fill="#004aad">
+    Fast • Reliable • Solutions
+  </text>
+</svg>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Services | Clinch Cyber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="video-container">
+  <video autoplay muted loop>
+    <source src="vid.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+</div>
+
+<header class="header">
+  <img src="logo.svg" class="logo">
+</header>
+
+<section class="services-section">
+  <h2>Our Services</h2>
+
+  <div class="services-grid">
+    <div class="service-card" onclick="openModal('typing')">📄 Document Typing</div>
+    <div class="service-card" onclick="openModal('online')">🌐 Online Applications</div>
+    <div class="service-card" onclick="openModal('kra')">🏛️ KRA & Government</div>
+    <div class="service-card" onclick="openModal('email')">📧 Email Setup</div>
+    <div class="service-card" onclick="openModal('it')">💻 Website & IT</div>
+    <div class="service-card" onclick="openModal('games')">🎮 PC Games</div>
+  </div>
+</section>
+
+<!-- POPUP -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3 id="modalTitle"></h3>
+
+    <input id="customerName" placeholder="Your Name">
+    <input id="customerPhone" placeholder="Phone Number">
+
+    <div id="optionsContainer"></div>
+
+    <input id="otherOption" placeholder="Other service (optional)">
+    <button class="btn-primary" onclick="sendToWhatsApp()">Send to WhatsApp</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

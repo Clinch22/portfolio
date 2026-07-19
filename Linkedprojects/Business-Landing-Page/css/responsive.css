@@ -1,0 +1,213 @@
+@media (max-width: 1080px) {
+  .quote-btn {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .feature-grid,
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-grid,
+  .split-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel {
+    min-height: 450px;
+  }
+
+  .hero-card {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .reverse-mobile .image-stack {
+    order: -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 84px 0;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-panel {
+    position: fixed;
+    top: 82px;
+    left: 20px;
+    right: 20px;
+    display: grid;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-14px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-links {
+    display: grid;
+    gap: 0;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 0;
+    color: var(--primary);
+  }
+
+  .quote-btn {
+    display: inline-flex;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .timeline,
+  .gallery,
+  .pricing-grid,
+  .stats-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .price-card.featured {
+    transform: none;
+  }
+
+  .newsletter-inner,
+  .newsletter-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .container,
+  .narrow {
+    width: min(100% - 28px, 1160px);
+  }
+
+  .nav {
+    min-height: 72px;
+  }
+
+  .nav-panel {
+    top: 72px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .hero {
+    padding-top: 118px;
+  }
+
+  .hero-actions,
+  .stat-strip,
+  .feature-grid,
+  .cards-grid,
+  .check-list,
+  .timeline,
+  .gallery,
+  .pricing-grid,
+  .stats-grid,
+  .contact-form,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-panel {
+    min-height: 520px;
+  }
+
+  .hero-card {
+    bottom: 0;
+  }
+
+  .service-orbit {
+    display: none;
+  }
+
+  .hero-card img {
+    height: 240px;
+  }
+
+  .image-stack img {
+    min-height: 340px;
+  }
+
+  .floating-badge {
+    right: 12px;
+    bottom: 18px;
+  }
+
+  .testimonial-shell {
+    padding: 28px 20px 58px;
+  }
+
+  .slider-btn {
+    top: auto;
+    bottom: 18px;
+    transform: none;
+  }
+
+  .slider-btn.prev {
+    left: 20px;
+  }
+
+  .slider-btn.next {
+    right: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 2.45rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .project-card,
+  .project-card img {
+    min-height: 230px;
+  }
+}
