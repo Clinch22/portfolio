@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop | SmartShop</title>
+  <meta name="description" content="Browse SmartShop products with search, filtering, sorting, cart, and wishlist interactions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="js/products.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/shop.js"></script>
+</head>
+<body>
+  <header class="site-header"></header>
+  <main class="container">
+    <section class="page-hero">
+      <span class="eyebrow">Shop</span>
+      <h1>Find the right upgrade.</h1>
+      <p>Filter, search, sort, save favorites, and add items to your cart with responsive interactions.</p>
+      <div class="shop-stats">
+        <span><i class="fa-solid fa-truck-fast"></i> Free shipping over Ksh.3000</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Secure demo checkout</span>
+        <span><i class="fa-solid fa-rotate-left"></i> 30 day returns</span>
+      </div>
+    </section>
+    <section aria-label="Product controls">
+      <div class="toolbar">
+        <input class="field" data-shop-search type="search" placeholder="Search products" aria-label="Search products">
+        <select class="select" data-sort aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+          <option value="rating">Highest rated</option>
+        </select>
+        <div class="filter-pills" data-filters></div>
+      </div>
+      <div class="product-grid" data-products></div>
+      <div class="empty-state" data-no-results hidden><i class="fa-solid fa-magnifying-glass"></i><h3>No products found</h3><p>Try a different search or category.</p></div>
+    </section>
+    <section id="wishlist" class="section">
+      <div class="section-head">
+        <div><span class="eyebrow">Saved</span><h2>Your wishlist</h2></div>
+      </div>
+      <div class="product-grid" data-wishlist-products></div>
+      <div class="empty-state" data-empty-wishlist><i class="fa-regular fa-heart"></i><h3>No saved items yet</h3><p>Tap a heart on any product to save it here.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+</body>
+</html>

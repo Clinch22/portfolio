@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari ERP Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="loading-screen" aria-hidden="true">
+    <div class="loader-mark"></div>
+    <div class="skeleton-row"></div>
+    <div class="skeleton-grid">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <div class="brand">
+      <span class="brand-mark">S</span>
+      <div>
+        <strong>Safari ERP</strong>
+        <small>Operations Suite</small>
+      </div>
+    </div>
+    <nav class="menu">
+      <a class="active" href="#dashboard" data-section="Dashboard"><span data-icon="layout"></span>Dashboard</a>
+      <a href="#customers" data-section="Customers"><span data-icon="users"></span>Customers</a>
+      <a href="#employees" data-section="Employees"><span data-icon="badge"></span>Employees</a>
+      <a href="#inventory" data-section="Inventory"><span data-icon="package"></span>Inventory</a>
+      <a href="#orders" data-section="Orders"><span data-icon="cart"></span>Orders</a>
+      <a href="#sales" data-section="Sales"><span data-icon="trend"></span>Sales</a>
+      <a href="#finance" data-section="Finance"><span data-icon="wallet"></span>Finance</a>
+      <a href="#reports" data-section="Reports"><span data-icon="report"></span>Reports</a>
+      <a href="#calendar" data-section="Calendar"><span data-icon="calendar"></span>Calendar</a>
+      <a href="#settings" data-section="Settings"><span data-icon="settings"></span>Settings</a>
+      <a href="#support" data-section="Support"><span data-icon="support"></span>Support</a>
+    </nav>
+    <div class="sidebar-card">
+      <span class="mini-label">System Health</span>
+      <strong>98.7%</strong>
+      <div class="progress slim"><span style="width: 98.7%"></span></div>
+      <small>All branches synced</small>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay" tabindex="-1"></div>
+
+  <main class="app-shell" id="dashboard">
+    <header class="topbar">
+      <button class="icon-button sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><span data-icon="menu"></span></button>
+      <div class="search" role="search">
+        <span data-icon="search"></span>
+        <input id="globalSearch" type="search" placeholder="Search orders, inventory, people..." aria-label="Search dashboard">
+      </div>
+      <div class="topbar-actions">
+        <span class="date-pill" id="currentDate"></span>
+        <span class="clock" id="clock" aria-live="polite"></span>
+        <button class="icon-button" id="messagesBtn" aria-label="Open messages"><span data-icon="mail"></span><b class="dot"></b></button>
+        <button class="icon-button" id="notificationsBtn" aria-label="Open notifications" aria-expanded="false"><span data-icon="bell"></span><b class="dot live"></b></button>
+        <button class="icon-button" id="themeToggle" aria-label="Toggle theme"><span data-icon="moon"></span></button>
+        <button class="profile" aria-label="Current user profile">
+          <img src="assets/images/avatar-amina.svg" alt="Amina profile photo">
+          <span>Amina K.</span>
+        </button>
+        <button class="logout"><span data-icon="logout"></span>Logout</button>
+      </div>
+      <div class="dropdown-panel" id="notificationDropdown" aria-label="Notifications">
+        <strong>Notifications</strong>
+        <div class="notice-list" id="noticeList"></div>
+      </div>
+    </header>
+
+    <section class="welcome-banner fade-up">
+      <div>
+        <span class="mini-label">Friday operations command center</span>
+        <h1>Welcome back, Amina</h1>
+        <p>Revenue, inventory, orders, and workforce status are synchronized across Safari retail, logistics, and finance branches.</p>
+      </div>
+      <div class="quick-actions" aria-label="Quick actions">
+        <button><span data-icon="plus"></span>New Order</button>
+        <button><span data-icon="download"></span>Export Report</button>
+        <button id="printDashboard"><span data-icon="printer"></span>Print</button>
+        <button id="fullscreenBtn"><span data-icon="expand"></span>Fullscreen</button>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="Dashboard overview">
+      <article class="stat-card fade-up">
+        <div class="stat-icon emerald"><span data-icon="wallet"></span></div>
+        <span>Total Revenue</span>
+        <strong data-count="842650">$0</strong>
+        <small class="positive">+12.6% vs last month</small>
+        <canvas class="sparkline" data-points="12,18,15,26,32,28,38"></canvas>
+      </article>
+      <article class="stat-card fade-up">
+        <div class="stat-icon blue"><span data-icon="trend"></span></div>
+        <span>Today's Sales</span>
+        <strong data-count="42680">$0</strong>
+        <small class="positive">+8.2% since 08:00</small>
+        <canvas class="sparkline" data-points="7,9,10,14,18,21,24"></canvas>
+      </article>
+      <article class="stat-card fade-up">
+        <div class="stat-icon amber"><span data-icon="cart"></span></div>
+        <span>Pending Orders</span>
+        <strong data-count="138">0</strong>
+        <small class="negative">-3.4% backlog</small>
+        <canvas class="sparkline" data-points="24,22,18,19,15,13,11"></canvas>
+      </article>
+      <article class="stat-card fade-up">
+        <div class="stat-icon red"><span data-icon="package"></span></div>
+        <span>Low Stock Items</span>
+        <strong data-count="27">0</strong>
+        <small class="negative">+5 items flagged</small>
+        <canvas class="sparkline" data-points="8,10,9,14,13,18,20"></canvas>
+      </article>
+      <article class="stat-card fade-up">
+        <div class="stat-icon violet"><span data-icon="badge"></span></div>
+        <span>Active Employees</span>
+        <strong data-count="312">0</strong>
+        <small class="positive">96% attendance</small>
+        <canvas class="sparkline" data-points="28,29,31,30,32,33,34"></canvas>
+      </article>
+      <article class="stat-card fade-up">
+        <div class="stat-icon teal"><span data-icon="users"></span></div>
+        <span>New Customers</span>
+        <strong data-count="84">0</strong>
+        <small class="positive">+18.1% acquisition</small>
+        <canvas class="sparkline" data-points="5,8,7,12,15,19,23"></canvas>
+      </article>
+    </section>
+
+    <div class="content-layout">
+      <div class="primary-column">
+        <section class="panel chart-panel fade-up">
+          <div class="section-head">
+            <div>
+              <span class="mini-label">Charts</span>
+              <h2>Sales Overview</h2>
+            </div>
+            <div class="segmented" role="tablist" aria-label="Chart period">
+              <button class="active">Week</button>
+              <button>Month</button>
+              <button>Year</button>
+            </div>
+          </div>
+          <canvas id="salesChart" height="260" aria-label="Sales overview chart"></canvas>
+        </section>
+
+        <section class="chart-grid" aria-label="Business charts">
+          <article class="panel mini-chart fade-up">
+            <h3>Revenue</h3>
+            <canvas id="revenueChart" height="170"></canvas>
+          </article>
+          <article class="panel mini-chart fade-up">
+            <h3>Orders by Month</h3>
+            <div class="bar-stack" id="ordersBars"></div>
+          </article>
+          <article class="panel mini-chart fade-up">
+            <h3>Inventory Status</h3>
+            <div class="donut" style="--value:72"><span>72%</span></div>
+          </article>
+          <article class="panel mini-chart fade-up">
+            <h3>Profit vs Expenses</h3>
+            <canvas id="profitChart" height="170"></canvas>
+          </article>
+          <article class="panel mini-chart wide fade-up">
+            <h3>Recent Performance</h3>
+            <canvas id="performanceChart" height="170"></canvas>
+          </article>
+        </section>
+
+        <section class="panel table-panel fade-up" id="orders">
+          <div class="section-head">
+            <div>
+              <span class="mini-label">Recent orders</span>
+              <h2>Order Pipeline</h2>
+            </div>
+            <div class="table-tools">
+              <input id="orderSearch" type="search" placeholder="Filter orders" aria-label="Filter orders">
+              <button id="exportOrders"><span data-icon="download"></span>Export</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th><button data-sort="id">Order ID</button></th>
+                  <th><button data-sort="customer">Customer</button></th>
+                  <th><button data-sort="product">Product</button></th>
+                  <th><button data-sort="amount">Amount</button></th>
+                  <th><button data-sort="status">Status</button></th>
+                  <th><button data-sort="date">Date</button></th>
+                </tr>
+              </thead>
+              <tbody id="ordersBody"></tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <button id="prevPage" aria-label="Previous page"><span data-icon="chevron-left"></span></button>
+            <span id="pageInfo"></span>
+            <button id="nextPage" aria-label="Next page"><span data-icon="chevron-right"></span></button>
+          </div>
+        </section>
+
+        <section class="panel inventory-panel fade-up" id="inventory">
+          <div class="section-head">
+            <div>
+              <span class="mini-label">Warehouse</span>
+              <h2>Inventory Control</h2>
+            </div>
+            <button><span data-icon="plus"></span>Add Item</button>
+          </div>
+          <div class="inventory-grid" id="inventoryGrid"></div>
+        </section>
+
+        <section class="panel employees-panel fade-up" id="employees">
+          <div class="section-head">
+            <div>
+              <span class="mini-label">People</span>
+              <h2>Employee Attendance</h2>
+            </div>
+            <button><span data-icon="calendar"></span>Roster</button>
+          </div>
+          <div class="employee-grid" id="employeeGrid"></div>
+        </section>
+
+        <section class="panel calendar-panel fade-up" id="calendar">
+          <div class="section-head">
+            <div>
+              <span class="mini-label">Planning</span>
+              <h2 id="calendarTitle">Calendar</h2>
+            </div>
+            <div class="calendar-controls">
+              <button id="prevMonth" aria-label="Previous month"><span data-icon="chevron-left"></span></button>
+              <button id="nextMonth" aria-label="Next month"><span data-icon="chevron-right"></span></button>
+            </div>
+          </div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+
+        <section class="panel activity-panel fade-up">
+          <div class="section-head">
+            <div>
+              <span class="mini-label">Live operations</span>
+              <h2>Activity Feed</h2>
+            </div>
+            <span class="live-pill">Live</span>
+          </div>
+          <div class="timeline" id="activityFeed"></div>
+        </section>
+      </div>
+
+      <aside class="right-rail" aria-label="Productivity widgets">
+        <section class="panel tasks fade-up">
+          <h3>Today's Tasks</h3>
+          <label><input type="checkbox" checked> Reconcile Nairobi branch</label>
+          <label><input type="checkbox"> Approve bulk purchase orders</label>
+          <label><input type="checkbox"> Review low-stock alerts</label>
+          <label><input type="checkbox"> Send weekly finance pack</label>
+        </section>
+
+        <section class="panel notes fade-up">
+          <h3>Quick Notes</h3>
+          <textarea aria-label="Quick notes" placeholder="Add operational notes...">Confirm Mombasa shipment ETA before 16:00.</textarea>
+        </section>
+
+        <section class="panel meetings fade-up">
+          <h3>Upcoming Meetings</h3>
+          <div class="mini-list">
+            <p><strong>10:30</strong> Sales forecast sync</p>
+            <p><strong>13:00</strong> Vendor review</p>
+            <p><strong>15:45</strong> Warehouse shift handoff</p>
+          </div>
+        </section>
+
+        <section class="panel weather fade-up">
+          <h3>Weather</h3>
+          <div class="weather-main">
+            <span data-icon="sun"></span>
+            <strong>27°C</strong>
+          </div>
+          <p>Nairobi, clear skies. Logistics routes normal.</p>
+        </section>
+
+        <section class="panel messages fade-up">
+          <h3>Recent Messages</h3>
+          <div class="message-row">
+            <img src="assets/images/avatar-joel.svg" alt="Joel profile photo">
+            <p><strong>Joel</strong><span>Delivery manifest uploaded.</span></p>
+          </div>
+          <div class="message-row">
+            <img src="assets/images/avatar-lina.svg" alt="Lina profile photo">
+            <p><strong>Lina</strong><span>Payroll batch ready.</span></p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <button class="fab" id="fab" aria-label="Create quick record"><span data-icon="plus"></span></button>
+  <div class="toast-zone" id="toastZone" aria-live="polite"></div>
+
+  <script src="js/charts.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

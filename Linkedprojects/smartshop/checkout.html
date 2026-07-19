@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | SmartShop</title>
+  <meta name="description" content="SmartShop demo checkout page with shipping, payment, and order summary.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="js/products.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/checkout.js"></script>
+</head>
+<body>
+  <header class="site-header"></header>
+  <main class="container">
+    <section class="page-hero"><span class="eyebrow">Checkout</span><h1>Secure demo checkout.</h1><p>This form validates like a real flow but never processes payment.</p></section>
+    <section class="checkout-layout">
+      <form class="panel panel-pad" data-checkout-form>
+        <h2>Shipping details</h2>
+        <div class="form-grid">
+          <label>First name<input class="field" required autocomplete="given-name"></label>
+          <label>Last name<input class="field" required autocomplete="family-name"></label>
+          <label class="full">Email<input class="field" type="email" required autocomplete="email"></label>
+          <label class="full">Address<input class="field" required autocomplete="street-address"></label>
+          <label>City<input class="field" required autocomplete="address-level2"></label>
+          <label>Postal code<input class="field" required autocomplete="postal-code"></label>
+        </div>
+        <h2>Payment method</h2>
+        <div class="payment-tabs" role="tablist" aria-label="Payment method">
+          <button class="is-active" type="button"><i class="fa-regular fa-credit-card"></i> Card</button>
+          <button type="button"><i class="fa-brands fa-paypal"></i> PayPal</button>
+          <button type="button"><i class="fa-brands fa-apple-pay"></i> Apple Pay</button>
+        </div>
+        <div class="form-grid">
+          <label class="full">Card number<input class="field" inputmode="numeric" placeholder="4242 4242 4242 4242" required></label>
+          <label>Expiry<input class="field" placeholder="08/29" required></label>
+          <label>CVC<input class="field" placeholder="123" required></label>
+        </div>
+        <button class="btn btn-full" type="submit"><i class="fa-solid fa-lock"></i> Place demo order</button>
+      </form>
+      <aside class="panel panel-pad" data-checkout-summary></aside>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartShop | Premium E-Commerce Storefront</title>
+  <meta name="description" content="SmartShop is a premium static e-commerce storefront built with HTML, CSS, and vanilla JavaScript.">
+  <meta property="og:title" content="SmartShop | Premium E-Commerce Storefront">
+  <meta property="og:description" content="A polished portfolio storefront with cart, search, filtering, product pages, and checkout.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script defer src="js/products.js"></script>
+  <script defer src="js/utils.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/home.js"></script>
+</head>
+<body>
+  <header class="site-header"></header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow"><i class="fa-solid fa-gem"></i> Curated premium tech and lifestyle</span>
+          <h1>SmartShop</h1>
+          <p>Discover a portfolio-grade shopping experience with crisp product storytelling, persistent cart behavior, search, wishlist, and a checkout flow that feels ready for real customers.</p>
+          <div class="hero-actions">
+            <a class="btn" href="shop.html"><i class="fa-solid fa-store"></i> Shop collection</a>
+            <a class="btn btn-secondary" href="#featured"><i class="fa-solid fa-arrow-down"></i> Featured picks</a>
+          </div>
+          <div class="trust-strip" aria-label="Store highlights">
+            <div><strong data-counter="42">0</strong><span>Curated items</span></div>
+            <div><strong data-counter="98">0</strong><span>Customer score</span></div>
+            <div><strong data-counter="24">0</strong><span>Hour dispatch</span></div>
+          </div>
+        </div>
+        <div class="hero-showcase" aria-label="Featured SmartShop products">
+          <div class="hero-card main"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1200&q=82" alt="Premium electronics arranged on a desk"></div>
+          <div class="hero-card side"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Red lifestyle sneaker"></div>
+          <div class="floating-offer"><strong>Summer edit is live</strong><span>Save up to 18% on creator essentials.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Departments</span>
+            <h2>Designed for the way people actually browse.</h2>
+          </div>
+          <p>Category tiles, direct product navigation, and quick cart actions make the storefront feel commercial without requiring a backend.</p>
+        </div>
+        <div class="category-grid">
+          <a class="category-tile" href="shop.html?category=Audio"><i class="fa-solid fa-headphones"></i><h3>Audio</h3><span>Headphones and speakers</span></a>
+          <a class="category-tile" href="shop.html?category=Computers"><i class="fa-solid fa-laptop"></i><h3>Computers</h3><span>Portable performance</span></a>
+          <a class="category-tile" href="shop.html?category=Wearables"><i class="fa-solid fa-heart-pulse"></i><h3>Wearables</h3><span>Smart health tech</span></a>
+          <a class="category-tile" href="shop.html?category=Home%20Office"><i class="fa-solid fa-chair"></i><h3>Home Office</h3><span>Focused work spaces</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Featured</span>
+            <h2>Recruiter-ready product cards.</h2>
+          </div>
+          <a class="btn btn-secondary" href="shop.html">View all</a>
+        </div>
+        <div class="product-grid" data-featured-products></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container promo-band">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1100&q=82" alt="Modern workspace with laptop and accessories">
+        <div class="promo-copy">
+          <span class="eyebrow">Portfolio detail</span>
+          <h2>Every interaction has a real job.</h2>
+          <p>The cart persists with localStorage, products can be filtered and searched, quantities update instantly, and checkout ends in a clean success state.</p>
+          <a class="btn" href="checkout.html"><i class="fa-solid fa-credit-card"></i> Preview checkout</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+</body>
+</html>

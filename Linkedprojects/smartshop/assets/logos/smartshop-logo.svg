@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="64" viewBox="0 0 220 64" role="img" aria-label="SmartShop logo">
+  <rect width="64" height="64" rx="18" fill="#2563eb"/>
+  <path d="M36.5 6 15 36h15l-3 22 22-32H34l2.5-20Z" fill="#fff"/>
+  <text x="78" y="41" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="800" fill="#1f2937">SmartShop</text>
+</svg>

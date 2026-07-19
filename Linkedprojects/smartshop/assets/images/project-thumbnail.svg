@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="SmartShop project thumbnail">
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="72" y="70" width="1056" height="535" rx="34" fill="#fff" stroke="#e5e7eb"/>
+  <rect x="116" y="118" width="190" height="44" rx="16" fill="#2563eb"/>
+  <rect x="850" y="118" width="84" height="44" rx="16" fill="#eef2ff"/>
+  <rect x="954" y="118" width="84" height="44" rx="16" fill="#eef2ff"/>
+  <text x="116" y="270" font-family="Poppins, Arial, sans-serif" font-size="76" font-weight="800" fill="#1f2937">SmartShop</text>
+  <text x="119" y="326" font-family="Inter, Arial, sans-serif" font-size="28" fill="#667085">Premium static e-commerce storefront</text>
+  <rect x="116" y="374" width="190" height="56" rx="28" fill="#2563eb"/>
+  <text x="162" y="410" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#fff">Shop Now</text>
+  <rect x="548" y="220" width="190" height="250" rx="24" fill="#dbeafe"/>
+  <rect x="762" y="180" width="260" height="330" rx="28" fill="#fef3c7"/>
+  <circle cx="643" cy="330" r="62" fill="#2563eb"/>
+  <circle cx="892" cy="330" r="88" fill="#f59e0b"/>
+</svg>
